@@ -29,15 +29,18 @@ def comp_point_df(dataf, win, lose):
 # )
 
 # Read Member's Score
+num_mems = 3
 spaces = 30
 df = pd.read_csv("data.csv", encoding="windows-1252", low_memory=False, index_col=False)
-df.set_index('No.', inplace=True)
+df.set_index(pd.Index(list(range(1, num_mems))), inplace=True)
+
 # Admin accounts
 password = 'badmintonislife'
 with open('admin.txt', 'r') as file:
 	admin_mode = file.read()
 if admin_mode == 'Yes':
 	st.title('Remember to exit admin mode at "Admin only"')
+
 # Web API
 menu = st.sidebar.selectbox('Option', ('Ranking', 'Announcements', 'Admin only'))
 if menu == "Admin only":
