@@ -32,7 +32,7 @@ def comp_point_df(dataf, win, lose):
 num_mems = 3
 spaces = 30
 df = pd.read_csv("data.csv", encoding="windows-1252", low_memory=False, index_col=False)
-df.set_index(pd.Index(list(range(1, num_mems))), inplace=True)
+df.set_index(pd.Index(list(range(1, num_mems + 1))), inplace=True)
 
 # Admin accounts
 password = 'badmintonislife'
