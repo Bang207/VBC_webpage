@@ -74,7 +74,6 @@ elif menu == 'Announcements':
 		announces = file.read()
 	st.text(announces)
 	if admin_mode == 'Yes':
-		st.text('ble')
 		new_announce = '\n' + st.text_input('Add announcements')
 		with open('announcements.txt', 'a') as file:
 			file.write(new_announce)
